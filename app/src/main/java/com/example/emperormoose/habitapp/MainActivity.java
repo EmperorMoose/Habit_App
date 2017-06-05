@@ -50,12 +50,11 @@ public class MainActivity extends AppCompatActivity {
         listAdapter = new ArrayAdapter<String>(this, R.layout.simplerow, habitList);
         mListView.setAdapter(listAdapter);
 
-        //TODO fix the errors in this block. activity.class is unknown, despite being defined. Figure out how intent works,
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent mIntent = new Intent(view.getContext(), activity_habit.class);
-                mIntent.putExtra(text);
+                Intent mIntent = new Intent(view.getContext(), habitActivity.class);
+                mIntent.putExtra("test", "test");
                 startActivity(mIntent);
             }
         });
